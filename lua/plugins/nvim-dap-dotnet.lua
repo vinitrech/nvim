@@ -1,4 +1,3 @@
-
 -- lua/plugins/nvim-dap-dotnet.lua
 return {
   "mfussenegger/nvim-dap",
@@ -17,7 +16,7 @@ return {
     dap.adapters.coreclr = netcoredbg_adapter
     dap.adapters.netcoredbg = netcoredbg_adapter
 
-    -- Find closest .csproj
+    -- Fixed cross-platform find_csproj
     local function find_csproj(startpath)
       local p = Path:new(startpath)
       while p do
@@ -25,10 +24,12 @@ return {
         if #files > 0 then
           return files[1]
         end
-        if p:is_root() then
+
+        local parent = p:parent()
+        if parent:absolute() == p:absolute() then
           return nil
         end
-        p = p:parent()
+        p = parent
       end
     end
 
@@ -80,4 +81,3 @@ return {
     end
   end,
 }
-
