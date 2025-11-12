@@ -1,8 +1,10 @@
 return {
-  "seblyng/roslyn.nvim",
-  ---@module 'roslyn.config'
-  ---@type RoslynNvimConfig
-  opts = {
-    -- your configuration comes here; leave empty for default settings
+  {
+    "seblyng/roslyn.nvim",
+    ft = { "cs", "vb" },
+    opts = {}, -- leave it empty or tweak small options
+    config = function(_, opts)
+      require("roslyn").setup(opts)
+    end,
   },
 }
