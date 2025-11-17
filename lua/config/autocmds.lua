@@ -6,3 +6,10 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- Ignore swap file prompts, always choose Edit
+vim.api.nvim_create_autocmd("SwapExists", {
+  callback = function()
+    vim.v.swapchoice = "e" -- always edit, ignore swap
+  end,
+})
