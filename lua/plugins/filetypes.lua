@@ -6,6 +6,7 @@ return {
         extension = {
           log = "log",
           config = "xml",
+          soy = "html",
         },
       })
     end,
