@@ -7,6 +7,7 @@ return {
           log = "log",
           config = "xml",
           soy = "html",
+          cshtml = "html",
         },
       })
     end,
