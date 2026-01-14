@@ -1,7 +1,7 @@
 return {
   "folke/tokyonight.nvim",
   opts = {
-    style = "night", -- or "storm" or "light"
+    style = "moon", -- or "storm" or "light"
     transparent = true,
     styles = {
       sidebars = "transparent",
