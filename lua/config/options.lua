@@ -13,3 +13,6 @@ vim.opt.showmode = false
 vim.opt.signcolumn = "yes"
 vim.opt.cmdheight = 0
 vim.lsp.set_log_level("OFF")
+vim.opt.cursorline = true
+vim.opt.number = true
+vim.opt.relativenumber = true

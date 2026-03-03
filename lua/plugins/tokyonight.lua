@@ -19,6 +19,25 @@ return {
     end,
 
     on_highlights = function(hl, c)
+      local soft = "#0a202c" -- blended glass color (near terminal bg)
+
+      --------------------------------------------------
+      -- DIAGNOSTIC VIRTUAL TEXT (the popup labels)
+      --------------------------------------------------
+      hl.DiagnosticVirtualTextError = { fg = c.error, bg = soft }
+      hl.DiagnosticVirtualTextWarn = { fg = c.warning, bg = soft }
+      hl.DiagnosticVirtualTextInfo = { fg = c.info, bg = soft }
+      hl.DiagnosticVirtualTextHint = { fg = "#4fd1c5", bg = soft }
+
+      --------------------------------------------------
+      -- NEW Neovim 0.10+ inline hints (important!)
+      --------------------------------------------------
+      hl.LspInlayHint = {
+        fg = "#5a7d8c",
+        bg = "none",
+        italic = true,
+      }
+
       -- Fully transparent main areas
       hl.Normal = { bg = "none" }
       hl.NormalFloat = { bg = "none" }
