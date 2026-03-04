@@ -1,10 +1,11 @@
 return {
   {
     "seblyng/roslyn.nvim",
-    ---@module 'roslyn.config'
-    ---@type RoslynNvimConfig
-    opts = {
-      -- your configuration comes here; leave empty for default settings
-    },
+    enabled = true,
+    ft = "cs", -- Filetype for C#
+    config = function()
+      -- Optional: Add on_attach function here for custom keymaps or actions
+      require("roslyn").setup()
+    end,
   },
 }
