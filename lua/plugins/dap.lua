@@ -23,6 +23,12 @@ return {
             return path
           end,
         },
+        {
+          type = "coreclr",
+          name = "Attach to Process",
+          request = "attach",
+          processId = require("dap.utils").pick_process,
+        },
       }
     end,
   },
